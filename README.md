@@ -1,1 +1,1 @@
-# Multi-Style-Photo-Cartoonization
+# Multi-Style Photo Cartoonization

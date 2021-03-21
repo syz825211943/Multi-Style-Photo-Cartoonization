@@ -1,0 +1,12 @@
+combine discriminator branches
+use Discriminator_class_11_4
+1)train_11_4_1  remove loss_D_class_edge_fake -> fail
+
+2)train_11_4_2  double loss_D_class weight -> not well
+
+3)train_11_4_3  double loss_D_class weight & remove loss_D_class_edge_fake -> fail
+
+use Discriminator_class 11_8
+1)train_11_8_1 
+2)train_11_8_2  loss_D_class weight * 3
+3)train_11_8_3 based on 11_8_1 softmax

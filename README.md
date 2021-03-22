@@ -25,6 +25,6 @@ python test.py --name train --serial_test --dataroot [your dataset path] --which
 # Citation
 
 # Reference code
-- [CycleGAN] (https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
-- [CartoonGAN] (https://github.com/FlyingGoblin/CartoonGAN)
-- [ComboGAN] (https://github.com/AAnoosheh/ComboGAN)
+- CycleGAN (https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
+- CartoonGAN (https://github.com/FlyingGoblin/CartoonGAN)
+- ComboGAN (https://github.com/AAnoosheh/ComboGAN)

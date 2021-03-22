@@ -22,7 +22,7 @@ for epoch in range(opt.which_epoch + 1, opt.niter + opt.niter_decay + 1):
     epoch_iter = 0
     total_time = 0
 
-    if opt.init and epoch < 20: # flag of inititialization phase
+    if opt.init and epoch <= opt.init_niter: # flag of inititialization phase
         init = opt.init
     else:
         init = False

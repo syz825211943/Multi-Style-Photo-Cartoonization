@@ -2,7 +2,7 @@ import time
 import os
 from options.test_options import TestOptions
 from data.data_loader import DataLoader
-from models.combogan_model import ComboGANModel
+from models.cartoongan_model import CartoonGANModel
 from util.visualizer import Visualizer
 from util import html
 
@@ -12,7 +12,7 @@ opt.nThreads = 1   # test code only supports nThreads = 1
 opt.batchSize = 1  # test code only supports batchSize = 1
 
 dataset = DataLoader(opt)
-model = ComboGANModel(opt)
+model = CartoonGANModel(opt)
 visualizer = Visualizer(opt)
 # create website
 web_dir = os.path.join(opt.results_dir, opt.name, '%s_%d' % (opt.phase, opt.which_epoch))

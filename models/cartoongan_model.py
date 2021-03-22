@@ -45,6 +45,7 @@ class CartoonGANModel(BaseModel):
             self.load_network(self.netG, 'G', which_epoch)
             if self.isTrain and not opt.init:
                 self.load_network(self.netD, 'D', which_epoch)
+                self.load_network(self.classifier, 'A', which_epoch)
             print("load weights of pretrained model successfully")
 
         # test the function of encoder part
@@ -292,8 +293,8 @@ class CartoonGANModel(BaseModel):
             new_lr = self.opt.lr * (1 - decay_frac)
             print('updated learning rate: %f' % new_lr)
         else:
-            new_lr =self.lr
-
+            new_lr =self.opt.lr
+        print(new_lr)
         self.netG.update_lr(new_lr)
         self.netD.update_lr(new_lr)
         self.classifier.update_lr(new_lr)

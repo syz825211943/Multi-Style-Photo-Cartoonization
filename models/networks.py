@@ -215,6 +215,14 @@ class aux_classifier_conv_4(nn.Module):
     def step_grads(self):
         self.optimizers[0].step()
 
+    def load(self, save_path):
+        filename = save_path + ('%d.pth' % 0)
+        self.main.load_state_dict(torch.load(filename))
+
+    def save(self, save_path):
+        filename = save_path + ('%d.pth' % 0)
+        torch.save(self.main.cpu().state_dict(), filename)
+
 # use vgg model
 class aux_classifier(nn.Module):
     def __init__(self, init_weights=None, feature_mode=False, batch_norm=False, num_classes=3, gpu_id = []):

@@ -9,13 +9,12 @@ class BaseOptions():
         self.initialized = False
 
     def initialize(self):
-        self.parser.add_argument('--name', type=str, default='train', help='name of the experiment. It decides where to store samples and models')
+        self.parser.add_argument('--name', type=str, default='Init_train_6_22_4', help='name of the experiment. It decides where to store samples and models')
         self.parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints', help='models are saved here')
 
-        self.parser.add_argument('--dataroot', type=str, default='', help='path to images (should have subfolders train0, train1_stylename, train2_stylename, ..., edge1_stylename, edge2_stylename, ..., test)')
-        self.parser.add_argument('--vgg_pretrained_mode', type=str, default='./vgg19.pth', help='path to the pretrained vgg model')
-        self.parser.add_argument('--n_domains', type=int, default=3, help='Number of domains to transfer among generator')
-        self.parser.add_argument('--d_domains', type=int, default=3, help='Number of domains to transfer among discriminator')
+        self.parser.add_argument('--dataroot', type=str, default='/home2/shuyezhi/ComboGAN-modify-multiple/datasets/spirit_xhc_paprika/', help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
+	self.parser.add_argument('--vgg_pretrained_mode', type=str, default='/home2/shuyezhi/ComboGAN-modify/vgg19.pth', help='path to the pretrained vgg model')
+        self.parser.add_argument('--n_domains', type=int, default=3, help='Number of domains to transfer among')
 
         self.parser.add_argument('--max_dataset_size', type=int, default=float("inf"), help='Maximum number of samples allowed per dataset. If the dataset directory contains more than max_dataset_size, only a subset is loaded.')
         self.parser.add_argument('--resize_or_crop', type=str, default='resize_and_crop', help='scaling and cropping of images at load time [resize|resize_and_crop|crop]')
@@ -24,7 +23,7 @@ class BaseOptions():
         self.parser.add_argument('--loadSize', type=int, default=256, help='scale images to this size') # initial loadSize=286
         self.parser.add_argument('--fineSize', type=int, default=256, help='then crop to this size')
 
-        self.parser.add_argument('--batchSize', type=int, default=4, help='input batch size') 
+        self.parser.add_argument('--batchSize', type=int, default=4, help='input batch size') # if n_domain > 2, we set batchsize = 1
         self.parser.add_argument('--input_nc', type=int, default=3, help='# of input image channels')
         self.parser.add_argument('--output_nc', type=int, default=3, help='# of output image channels')
 
@@ -33,14 +32,11 @@ class BaseOptions():
         self.parser.add_argument('--netG_n_blocks', type=int, default=9, help='number of residual blocks to use for netG')
         self.parser.add_argument('--netG_n_shared', type=int, default=0, help='number of blocks to use for netG shared center module')
         self.parser.add_argument('--netD_n_layers', type=int, default=4, help='number of layers to use for netD')
-        self.parser.add_argument('--netG_framework', type=str, default='cartoon_generator', help='the framework design for netG')
-        self.parser.add_argument('--netD_framework', type=str, default='cartoon_discriminator', help='the framework design for netD')
-        self.parser.add_argument('--classifier_framework', type=str, default='conv4', help='the framework design for netD')
 
         self.parser.add_argument('--norm', type=str, default='instance', help='instance normalization or batch normalization') # use instance nromalization
         self.parser.add_argument('--use_dropout', action='store_true', default=False, help='insert dropout for the generator')
 
-        self.parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
+        self.parser.add_argument('--gpu_ids', type=str, default='6', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
         self.parser.add_argument('--nThreads', default=1, type=int, help='# threads for loading data')
 
         self.parser.add_argument('--display_id', type=int, default=0, help='window id of the web display (set >1 to use visdom)') 

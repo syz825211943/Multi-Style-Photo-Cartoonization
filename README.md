@@ -13,3 +13,18 @@ pip install -r requirements.txt
 ```bash
 python train.py --init --name train --dataroot [your dataset path]
 ```
+
+# Test
+- You can use your own trained model to test the model, also you can download pretrained models by the link below.
+- Put test real-world photo in test0 folder of your dataset.
+```bash
+python test.py --name train --serial_test --dataroot [your dataset path] --which_epoch 145
+```
+
+
+# Citation
+
+# Reference code
+- [CycleGAN] (https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix)
+- [CartoonGAN] (https://github.com/FlyingGoblin/CartoonGAN)
+- [ComboGAN] (https://github.com/AAnoosheh/ComboGAN)

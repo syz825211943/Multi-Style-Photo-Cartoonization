@@ -2,7 +2,7 @@
 Pytorch implement of Yezhi Shu, Ran Yi, Mengfei Xia, Zipeng Ye, Wang Zhao, Yang Chen, Yu-Kun Lai, Yong-Jin Liu. GAN-based Multi-Style Photo Cartoonization. IEEE Transactions on Visualization and Computer Graphics, DOI (identifier) 10.1109/TVCG.2021.3067201, 2021.
 
 ## Our Proposed Framework
-<img src = 'imgs/architecture.pdf'>
+<img src = 'imgs/architecture.png'>
 
 ## Results
 <img src = 'imgs/teaser.pdf'>

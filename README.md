@@ -5,7 +5,7 @@ Pytorch implement of Yezhi Shu, Ran Yi, Mengfei Xia, Zipeng Ye, Wang Zhao, Yang 
 <img src = 'imgs/architecture.png'>
 
 ## Results
-<img src = 'imgs/teaser.pdf'>
+<img src = 'imgs/teaser.png'>
 
 # Installation
 Install PyTorch 1.2.0+ and torchvision from http://pytorch.org and other dependencies could be downloaded by

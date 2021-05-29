@@ -14,6 +14,15 @@ pip install -r requirements.txt
 ```
 # Train
 - Prepare your own dataset and put it under the dataset folder. Note that your own dataset should contain subfoloders: train0, train1_[style1name], train2_[style2name], ..., edge1_[style1name], edge2_[style2name], ..., test0. Different style names corresponding to different styles you have collected.
+```bash
+------your dataset name
+   |----train0
+   |----train1_[style1name]
+   |----train2_[style1name]
+   |----edge1_[style1name]
+   |----edge2_[style1name]
+   |----test0
+```
 - Download the vgg19.pth from BaiduYun (https://pan.baidu.com/s/1zHx06jMfIUIdBY_X3ko6LA, extract code is z9p7) or Googledrive (https://drive.google.com/drive/folders/1jOSl_sBpGzm1wAvLgU5vDJOV9tg2PzIc?usp=sharing). Put it under Multi-Style Photo Cartoonization folder.
 - Train the model using the commond. Set --init to use initialization phase. If you have pretrained model, you can set --continue_train and --which_epoch simultaneously.
 ```bash
